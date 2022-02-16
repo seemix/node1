@@ -46,7 +46,6 @@ for (const onlineUser of onlineUsers) {
     })
 }
 
-
 for (const inPersonUser of inPersonUsers) {
     let data = `NAME: ${inPersonUser.name}\nAGE: ${inPersonUser.age}\nCITY: ${inPersonUser.city}\n\n`
     fs.appendFile(path.join(__dirname, 'main', 'inPerson', 'inPersonUsers.txt'), data, (err) => {
