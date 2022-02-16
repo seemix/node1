@@ -18,6 +18,11 @@ const onlineUsers = [
         name: "Andrii",
         age: 22,
         city: "Lviv",
+    },
+    {
+        name: "Vasyl",
+        age: 40,
+        city: "GM"
     }
 ]
 
@@ -26,6 +31,11 @@ const inPersonUsers = [
         name: "Serhii",
         age: 25,
         city: "Kyiv"
+    },
+    {
+        name: "Masha",
+        age: 30,
+        city: "MP"
     }
 ]
 
@@ -44,23 +54,3 @@ for (const inPersonUser of inPersonUsers) {
     })
 }
 
-const substituteUsers = () => {
-    const personUsers = fs.readFileSync(path.join(__dirname, 'main', 'inPerson', 'inPersonUsers.txt'), 'utf8', (err, data) => {
-        if (err) console.log(err);
-    })
-    const onlineUsers = fs.readFileSync(path.join(__dirname, 'main', 'online', 'onlineUsers.txt'), 'utf8', (err, data) => {
-        if (err) console.log(err);
-    })
-    fs.writeFile(path.join(__dirname, 'main', 'inPerson', 'inPersonUsers.txt'), onlineUsers, {flag: 'w'}, err => {
-        if (err) {
-            console.log(err);
-        }
-    });
-    fs.writeFile(path.join(__dirname, 'main', 'online', 'onlineUsers.txt'), personUsers, {flag: 'w'}, err => {
-        if (err) {
-            console.log(err);
-        }
-    });
-}
-
-substituteUsers();
